@@ -14,7 +14,9 @@ function Signup() {
     e.preventDefault();
     setError("");
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", form);
+      // await axios.post("http://localhost:5000/api/auth/signup", form);
+      await axios.post(`${process.env.REACT_APP_API_BASE}/api/auth/signup`, form);
+
       alert("Signup successful. You can now log in.");
       navigate("/login");
     } catch (err) {
